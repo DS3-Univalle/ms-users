@@ -1,0 +1,20 @@
+service: aws-node-http-api-project
+frameworkVersion: "3"
+
+custom:
+  defaultStage: dev
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage, self:custom.defaultStage}
+  iamRoleStatements:
+    - Effect: Allow
+ 
+functions:
+  verification:
+    handler: src/verification.verification
+    events:
+      - httpApi:
+          path: /ms-auth/verification-user
+          method: post

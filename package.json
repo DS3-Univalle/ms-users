@@ -1,0 +1,19 @@
+{
+  "name": "aws-node-http-api-project",
+  "version": "1.0.0",
+  "description": "Watch queue",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "stamayo",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1397.0",
+    "bcrypt": "^5.1.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
