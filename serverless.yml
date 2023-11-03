@@ -1,19 +1,18 @@
-service: aws-node-http-api-project
+service: ms-auth
 frameworkVersion: "3"
-
-custom:
-  defaultStage: dev
 
 provider:
   name: aws
   runtime: nodejs18.x
-  stage: ${opt:stage, self:custom.defaultStage}
-  iamRoleStatements:
-    - Effect: Allow
+  stage: dev
+  region: us-east-1
  
 functions:
   verification:
+    name: verification-lambda
     handler: src/verification.verification
+    timeout: 5
+    memorySize: 128
     events:
       - httpApi:
           path: /ms-auth/verification-user
